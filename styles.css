@@ -1,0 +1,65 @@
+/* 🌙 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Spectral', serif;
+  background: radial-gradient(circle at bottom, #1a0f1f, #0a0610);
+  color: #f3e9dc;
+  min-height: 100vh;
+}
+
+/* 🌌 Layout */
+.site-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ✨ Hero Section */
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 3rem;
+  border-radius: 24px;
+  background: rgba(20, 12, 25, 0.85);
+  border: 1px solid rgba(180, 150, 255, 0.3);
+  box-shadow: 0 0 40px rgba(180, 150, 255, 0.25);
+}
+
+/* 🌙 Text Styling */
+.moon {
+  font-size: 3rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 3rem;
+  color: #cbb9e8;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #d6c7f1;
+  margin-bottom: 1.5rem;
+}
+
+.status {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #e0d2ff;
+  text-shadow: 0 0 12px rgba(200, 180, 255, 0.4);
+}
