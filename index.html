@@ -1,94 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasty Cauldron | Brewing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasty Cauldron | Coming Soon</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Spectral+SC:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Spectral:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    :root {
+      --bg-deep: #0a0610;
+      --plum-dark: #1a0f1f;
+      --card-bg: rgba(20, 12, 25, 0.85);
+      --amethyst: #cbb9e8;
+      --text-main: #f3e9dc;
+      --text-soft: #d6c7f1;
+      --border-soft: rgba(180, 150, 255, 0.3);
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Spectral SC', serif;
-      background: radial-gradient(circle at bottom, #1a0f1f, #0a0610);
-      color: #f3e9dc;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Spectral', serif;
+      background: radial-gradient(circle at bottom, var(--plum-dark), var(--bg-deep));
+      color: var(--text-main);
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* ✨ Starfield */
-    .stars {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 0.7;
-      animation: twinkle 3s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-
-    /* ✨ Main card */
-    .container {
-      position: relative;
-      z-index: 2;
-      max-width: 620px;
-      padding: 2.5rem;
       text-align: center;
-      border-radius: 20px;
-      border: 2px solid #a291a5;
-      background: rgba(20, 12, 25, 0.85);
-      box-shadow: 0 0 30px rgba(180, 150, 255, 0.25);
     }
 
-    h1 {
-      font-family: 'Cinzel Decorative', cursive;
-      color: #b9a3e3;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.15rem;
-      color: #d6c7f1;
-      line-height: 1.6;
-    }
-
-    .brew {
-      margin-top: 1rem;
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      color: #cbb9e8;
-      text-shadow: 0 0 10px rgba(200, 180, 255, 0.4);
+    .card {
+      max-width: 640px;
+      padding: 3rem 2.5rem;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 0 40px rgba(180, 150, 255, 0.25);
     }
 
     .moon {
       font-size: 3rem;
       margin-bottom: 1rem;
-      animation: pulse 2s infinite alternate;
     }
 
-    @keyframes pulse {
-      from { transform: scale(0.95); opacity: 0.75; }
-      to { transform: scale(1.05); opacity: 1; }
+    h1 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 2.8rem;
+      color: var(--amethyst);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-soft);
+    }
+
+    .coming {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #e6d9ff;
+      text-shadow: 0 0 12px rgba(200, 180, 255, 0.4);
     }
 
     .footer {
@@ -100,33 +81,18 @@
 </head>
 <body>
 
-  <div class="stars" id="stars"></div>
-
-  <div class="container">
+  <div class="card">
     <div class="moon">🌙</div>
     <h1>Tasty Cauldron</h1>
     <p>
-      The kitchen is quiet… for now.<br>
-      New recipes, new magic, and a fresh space are taking shape.
+      Our cauldron is bubbling behind the scenes.<br>
+      We’re refining recipes and stirring up something special.
     </p>
-    <div class="brew">Something is brewing in the kitchen…</div>
+    <div class="coming">
+      Coming soon — updated food menu, tea variety & more
+    </div>
     <div class="footer">✨ Under Construction ✨</div>
   </div>
-
-  <script>
-    const stars = document.getElementById('stars');
-    const totalStars = 80;
-
-    for (let i = 0; i < totalStars; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (2 + Math.random() * 3) + 's';
-      star.style.animationDelay = Math.random() * 5 + 's';
-      stars.appendChild(star);
-    }
-  </script>
 
 </body>
 </html>
