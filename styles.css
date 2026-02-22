@@ -1,3 +1,32 @@
+/* 🌙 Tasty Cauldron Color System */
+:root {
+  /* Core Backgrounds */
+  --bg-deep: #0a0610;          /* night sky */
+  --bg-soft: #140c19;          /* card backgrounds */
+  --bg-glass: rgba(20, 12, 25, 0.85);
+
+  /* Primary Brand */
+  --plum-dark: #1a0f1f;
+  --plum-main: #2b1636;
+  --lavender-muted: #b9a3e3;
+
+  /* Accent Magic */
+  --moon-glow: #e6d9ff;
+  --amethyst: #cbb9e8;
+  --starlight: #f3e9dc;
+
+  /* Text */
+  --text-primary: #f3e9dc;
+  --text-secondary: #d6c7f1;
+  --text-muted: #8c7fa8;
+
+  /* Borders & Effects */
+  --border-soft: rgba(180, 150, 255, 0.3);
+  --shadow-magic: 0 0 40px rgba(180, 150, 255, 0.25);
+}
+
+
+
 /* 🌙 Global Reset */
 * {
   margin: 0;
@@ -63,3 +92,4 @@ h1 {
   color: #e0d2ff;
   text-shadow: 0 0 12px rgba(200, 180, 255, 0.4);
 }
+
