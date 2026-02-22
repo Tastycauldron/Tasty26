@@ -3,30 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasty Cauldron</title>
+  <title>Tasty Cauldron | Brewing</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Spectral:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Spectral+SC:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Spectral SC', serif;
+      background: radial-gradient(circle at bottom, #1a0f1f, #0a0610);
+      color: #f3e9dc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ✨ Starfield */
+    .stars {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* ✨ Main card */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      padding: 2.5rem;
+      text-align: center;
+      border-radius: 20px;
+      border: 2px solid #a291a5;
+      background: rgba(20, 12, 25, 0.85);
+      box-shadow: 0 0 30px rgba(180, 150, 255, 0.25);
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', cursive;
+      color: #b9a3e3;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.15rem;
+      color: #d6c7f1;
+      line-height: 1.6;
+    }
+
+    .brew {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #cbb9e8;
+      text-shadow: 0 0 10px rgba(200, 180, 255, 0.4);
+    }
+
+    .moon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(0.95); opacity: 0.75; }
+      to { transform: scale(1.05); opacity: 1; }
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #8c7fa8;
+    }
+  </style>
 </head>
 <body>
 
-  <main class="site-wrapper">
-    <section class="hero">
-      <div class="hero-content">
-        <span class="moon">🌙</span>
-        <h1>Tasty Cauldron</h1>
-        <p class="tagline">
-          A new space is taking shape.<br>
-          Fresh magic, thoughtful recipes, and a modern brew.
-        </p>
-        <p class="status">Something is brewing in the kitchen…</p>
-      </div>
-    </section>
-  </main>
+  <div class="stars" id="stars"></div>
 
-  <script src="js/main.js"></script>
+  <div class="container">
+    <div class="moon">🌙</div>
+    <h1>Tasty Cauldron</h1>
+    <p>
+      The kitchen is quiet… for now.<br>
+      New recipes, new magic, and a fresh space are taking shape.
+    </p>
+    <div class="brew">Something is brewing in the kitchen…</div>
+    <div class="footer">✨ Under Construction ✨</div>
+  </div>
+
+  <script>
+    const stars = document.getElementById('stars');
+    const totalStars = 80;
+
+    for (let i = 0; i < totalStars; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = (2 + Math.random() * 3) + 's';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      stars.appendChild(star);
+    }
+  </script>
+
 </body>
 </html>
